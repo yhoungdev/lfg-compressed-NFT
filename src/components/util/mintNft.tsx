@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
-import { Metaplex, keypairIdentity, bundlrStorage, walletAdapterIdentity } from '@metaplex-foundation/js';
-import { PublicKey, Keypair } from '@solana/web3.js';
+import { Metaplex, walletAdapterIdentity, toMetaplexFile } from '@metaplex-foundation/js'; 
+import { Buffer } from 'buffer';
 
 export const MintNFT = () => {
     const { connection } = useConnection();
-    const { publicKey, wallet, sendTransaction } = useWallet();
+    const { publicKey, wallet } = useWallet();
     const [nftName, setNftName] = useState('');
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState<File | null>(null);
     const [status, setStatus] = useState('');
 
     const handleMintNFT = async () => {
@@ -19,19 +19,25 @@ export const MintNFT = () => {
         try {
             setStatus('Minting in progress...');
 
-            const metaplex = Metaplex.make(connection)
-                .use(walletAdapterIdentity(wallet))
-                .use(bundlrStorage());
 
+            const metaplex = Metaplex.make(connection)
+                .use(walletAdapterIdentity(wallet));
+
+
+            const imageFile = image ? toMetaplexFile(new Uint8Array(await image.arrayBuffer()), image.name) : null;
+            const imageUri = imageFile ? await metaplex.storage().upload(imageFile) : '';
+
+   
             const { uri } = await metaplex
                 .nfts()
                 .uploadMetadata({
                     name: nftName,
                     symbol: '',
                     description: 'NFT created using Solana and Vite',
-                    image: image, 
+                    image: imageUri, 
                 });
 
+    
             const nft = await metaplex.nfts().create({
                 uri,
                 name: nftName,
@@ -57,7 +63,7 @@ export const MintNFT = () => {
             />
             <input
                 type="file"
-                onChange={(e) => setImage(e.target.files[0])}
+                onChange={(e) => setImage(e.target.files ? e.target.files[0] : null)}
             />
             <button onClick={handleMintNFT}>Mint NFT</button>
             <p>{status}</p>
