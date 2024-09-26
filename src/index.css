@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=chillax@500,600,700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #101018;
+  color: #fff;
+  /* cursor: none; */
+}
+
+.chillax-font {
+  font-family: 'Chillax', sans-serif;
+  font-weight: 600;
+}
+::-webkit-scrollbar {
+  width: 18px;
+}
+
+/* Track */
+.filter-bar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.filter-bar::-webkit-scrollbar-thumb {
+  background: rgb(205 255 0);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.filter-bar::-webkit-scrollbar-thumb:hover {
+  background: rgb(14, 174, 214);
+}
+
+@font-face {
+  font-family: "Oxanium";
+  src: url("./assets/fonts/Oxanium.ttf");
+}
+@font-face {
+  font-family: "PerfectDark";
+  src: url("./assets/fonts/pdark.ttf");
+}
+
+.oxanium {
+  font-family: "Oxanium", sans-serif;
+}
+
+.perfect-dark {
+  font-family: "PerfectDark", sans-serif;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.grad-text {
+  -webkit-text-fill-color: transparent;
+  font-family: 'Chillax', sans-serif;
+  background: linear-gradient(
+      90deg,
+      rgb(87, 255, 255) 1.39%,
+      rgb(231, 119, 255) 33.23%,
+      rgb(255, 216, 158) 66.1%,
+      rgb(89, 243, 255) 100%
+    )
+    text;
+}
+
+.default_button {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 30px 0px;
+  width: 100%;
+  max-width: 320px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+  background:
+    linear-gradient(rgb(31, 28, 53), rgb(31, 28, 53)) 0% 0% / 200% 200%
+      padding-box padding-box,
+    linear-gradient(
+        90deg,
+        rgb(87, 255, 255) 1.39%,
+        rgb(231, 119, 255) 33.23%,
+        rgb(255, 216, 158) 66.1%,
+        rgb(89, 243, 255) 100%
+      )
+      border-box border-box;
+  border-radius: 50em;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: initial;
+  padding: 15px 40px;
+  animation: 2s ease 0s infinite normal none running gradient;
+}
