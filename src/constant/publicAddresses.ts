@@ -3,4 +3,5 @@ export const ACCESSIBLE_ADDRESSES = [
   "ADQfXoeJLzpq38Xxu8DETBssrm72Q2De2MW9TeryjgXc",
   "CjwUKzruHXVDvX19iUGFUewbPxippNZCDu89trBt6xuT",
   "37GjWSUHzmqeWyuCnBan84RfijUE4w78Y4FLSG3Uod2T",
+  "9riZWGcTFTLoBpmRM5xfYXCrHsxoqL4ynqBYtNxskYHV"
 ];
