@@ -8,12 +8,12 @@ export const ACCESSIBLE_ADDRESSES = [
 
 
 export const FELLOW_ADDRESSES  = [
-  "7jQFJLS3QRGJyshYkLgp4QQH8D5c9qym2LQzkhag38UD",
-  "8J9Hz2tfFLDhE5vcdbinCMug4xqyBCfQCoi4QYfVapEn",
-  "A1mq3dn2tUBfJB6WjnL4XtVQgGLGAUD3FeiMLuUQoRMu",
-  "HjJQdfTHgC3EBX3471w4st8BXbBmtbaMyCAXNgcUb7dq",
-  "BtSTqq27A7xTMaCPWEhNwdf4eHsLWiWZvhQS2ABMd1Y4",
-  "9riZWGcTFTLoBpmRM5xfYXCrHsxoqL4ynqBYtNxskYHV",
-  "H3QFot1G5Xe8wAjkQbLLt5dEYsHBsicKLHL1aSBv2H2d",
+  // "7jQFJLS3QRGJyshYkLgp4QQH8D5c9qym2LQzkhag38UD",
+  // "8J9Hz2tfFLDhE5vcdbinCMug4xqyBCfQCoi4QYfVapEn",
+  // "A1mq3dn2tUBfJB6WjnL4XtVQgGLGAUD3FeiMLuUQoRMu",
+  // "HjJQdfTHgC3EBX3471w4st8BXbBmtbaMyCAXNgcUb7dq",
+  // "BtSTqq27A7xTMaCPWEhNwdf4eHsLWiWZvhQS2ABMd1Y4",
+  // "9riZWGcTFTLoBpmRM5xfYXCrHsxoqL4ynqBYtNxskYHV",
+  // "H3QFot1G5Xe8wAjkQbLLt5dEYsHBsicKLHL1aSBv2H2d",
   "9riZWGcTFTLoBpmRM5xfYXCrHsxoqL4ynqBYtNxskYHV",
 ];

@@ -24,14 +24,16 @@ export default function MintCNFTButton() {
   const [isMinting, setIsMinting] = useState(false);
   const [mintInfo, setMintInfo] = useState<MintInfo | null>(null);
   const [mintStatus, setMintStatus] = useState<string | null>(null);
-  const recipients = FELLOW_ADDRESSES; 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null); 
+  const recipients = FELLOW_ADDRESSES;
 
   const handleMint = async () => {
     if (!umi || !walletPublicKey || recipients.length === 0) return;
-    
+
     setIsMinting(true);
     setMintStatus("Preparing to mint...");
-    
+    setErrorMessage(null); 
+
     try {
       const merkleTree = await createMerkleTree(umi);
       setMintStatus("Merkle tree created. Creating collection NFT...");
@@ -43,9 +45,14 @@ export default function MintCNFTButton() {
 
       setMintInfo({ merkleTree, collectionNft, assetIds });
       setMintStatus(`${assetIds.length} cNFTs minted successfully!`);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error minting cNFTs:", error);
-      setMintStatus("Minting failed. Please try again.");
+      
+
+      setErrorMessage(
+        error?.message || "An unknown error occurred during minting. Please try again."
+      );
+      setMintStatus("Minting failed.");
     } finally {
       setIsMinting(false);
     }
@@ -54,14 +61,20 @@ export default function MintCNFTButton() {
   return (
     <div className="space-y-4">
       <div>
-        <Button onClick={handleMint}>
-          {isMinting ? "Minting..." : `Mint to ${recipients.length}  ${recipients.length === 0 ? 'Fellow' : 'Fellows'}`}
+        <Button onClick={handleMint} >
+          {isMinting ? "Minting..." : `Mint to ${recipients.length} ${recipients.length === 1 ? 'Fellow' : 'Fellows'}`}
         </Button>
       </div>
       {mintStatus && (
         <div className="bg-gray-100 p-4 rounded text-black">
           <p className="font-semibold">Status:</p>
           <p>{mintStatus}</p>
+        </div>
+      )}
+      {errorMessage && ( 
+        <div className="bg-red-100 p-4 rounded text-red-600">
+          <p className="font-semibold">Error:</p>
+          <p>{errorMessage}</p>
         </div>
       )}
       {mintInfo && <VerificationLinks mintInfo={mintInfo} />}

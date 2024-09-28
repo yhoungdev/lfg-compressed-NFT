@@ -1,3 +1,5 @@
+
+
 import {
   createTree,
   mintToCollectionV1,
@@ -15,7 +17,6 @@ import {
 import { cNFTMetadata, collectionMetadata } from "./metadata";
 import bs58 from "bs58";
 
-
 export async function createMerkleTree(umi: Umi): Promise<Signer> {
   const merkleTree = generateSigner(umi);
   const builder = await createTree(umi, {
@@ -28,7 +29,6 @@ export async function createMerkleTree(umi: Umi): Promise<Signer> {
   console.log("Merkle Tree created:", merkleTree.publicKey.toString());
   return merkleTree;
 }
-
 
 export async function createCollectionNFT(umi: Umi): Promise<Signer> {
   const collectionNft = generateSigner(umi);
@@ -43,12 +43,6 @@ export async function createCollectionNFT(umi: Umi): Promise<Signer> {
   await builder.sendAndConfirm(umi);
   console.log("Collection NFT created:", collectionNft.publicKey.toString());
   return collectionNft;
-}
-
-
-function getSolanaExplorerUrl(signature: Uint8Array, cluster: string = "devnet"): string {
-  const base58Signature = bs58.encode(signature);
-  return `https://explorer.solana.com/tx/${base58Signature}?cluster=${cluster}`;
 }
 
 
@@ -96,18 +90,31 @@ export async function mintMultipleCNFTs(
 
   for (let i = 0; i < recipients.length; i += batchSize) {
     const batch = recipients.slice(i, i + batchSize);
+    console.log(`Processing batch ${Math.floor(i / batchSize) + 1}:`, batch);
+
     try {
       const batchResults = await Promise.all(
         batch.map((recipient) => mintCNFT(umi, merkleTree, collectionNft, recipient))
       );
       results.push(...batchResults);
+      console.log(`Batch minted successfully:`, batchResults);
     } catch (error) {
-      console.error(`Error minting batch:`, error);
-      throw new Error(`Failed to mint batch. Please try again.`);
+      console.error(`Error minting batch for recipients ${batch}:`, error);
+      throw new Error(`Failed to mint batch for recipients ${batch}. Error: ${error.message}`);
     }
+
     console.log(`Minted ${results.length}/${recipients.length} cNFTs.`);
-    if (i + batchSize < recipients.length) await new Promise((resolve) => setTimeout(resolve, delay));
+    if (i + batchSize < recipients.length) {
+      console.log(`Waiting for ${delay / 1000} seconds before the next batch...`);
+      await new Promise((resolve) => setTimeout(resolve, delay));
+    }
   }
 
   return results;
+}
+
+
+function getSolanaExplorerUrl(signature: Uint8Array, cluster: string = "devnet"): string {
+  const base58Signature = bs58.encode(signature);
+  return `https://explorer.solana.com/tx/${base58Signature}?cluster=${cluster}`;
 }
