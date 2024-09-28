@@ -1,0 +1,25 @@
+{
+    "name": "Obiabo's Profile Image NFT",
+    "symbol": "EONFT",
+    "description": "This NFT represents my GitHub and Twitter profile. GitHub: GitHub/yhoungdev, Twitter: x.com/obiabo_immanuel",
+    "image": "https://avatars.githubusercontent.com/u/54102389?v=4",
+    "attributes": [
+      {
+        "trait_type": "Github",
+        "value": "https://github.com/yhoungdev"
+      },
+      {
+        "trait_type": "Twitter",
+        "value": "https://x.com/obiabo_immanuel"
+      }
+    ],
+    "external_url": "https://github.com/yhoungdev",
+    "seller_fee_basis_points": 10, 
+    "creators": [
+      {
+        "address": "8p9hFwVx3BibK9Cj5vbALEEfV5wGR1PRRcyxpDqPizCm",
+        "share": 100
+      }
+    ]
+  }
+  
