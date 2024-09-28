@@ -35,8 +35,6 @@
     "@types/express-session": "^1.18.0",
     "@types/js-cookie": "^3.0.6",
     "@types/passport": "^1.0.16",
-    "@types/passport-discord": "^0.1.13",
-    "@types/passport-twitter": "^1.0.40",
     "@types/react-dropzone": "^5.1.0",
     "@vercel/node": "^3.2.7",
     "axios": "^1.7.2",

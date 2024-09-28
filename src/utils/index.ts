@@ -1,25 +1,42 @@
 import { Keypair } from "@solana/web3.js";
-import bs58 from "bs58"; 
+import bs58 from "bs58";
 
-export const NFT_IMAGE =
-  "https://avatars.githubusercontent.com/u/54102389?v=4";
 
-//Hahahah FYI this is just a demo account i created
-// For the sake of this test hahaha 
-const BASE58_PRIVATE_KEY = '';
+const BASE58_PRIVATE_KEY = import.meta.env.VITE_SECRETE_KEY;
 
-const privateKeyUint8Array = bs58.decode(BASE58_PRIVATE_KEY);
 
 export const getKeypair = () => {
-  return Keypair.fromSecretKey(privateKeyUint8Array);
+  try {
+   
+    const secretKey = bs58.decode(BASE58_PRIVATE_KEY);
+    if (secretKey.length !== 64) {
+      throw new Error(`Invalid secret key length: ${secretKey.length}. Expected 64.`);
+    }
+    return Keypair.fromSecretKey(secretKey);
+  } catch (error) {
+    console.error("Error getting Keypair:", error);
+    throw error;
+  }
 };
+
 
 export const getPublicKey = () => {
   const keypair = getKeypair();
   return keypair.publicKey.toBase58();
 };
 
+
 export const getSecretKey = () => {
   const keypair = getKeypair();
   return Array.from(keypair.secretKey);
 };
+
+
+try {
+  const keypair = getKeypair();
+  console.log('Public Key:', keypair.publicKey.toBase58());
+  console.log('Secret Key Length:', keypair.secretKey.length);
+  // console.log('Secret Key:', Array.from(keypair.secretKey));
+} catch (error) {
+  console.error("Failed to create keypair for debugging:", error);
+}

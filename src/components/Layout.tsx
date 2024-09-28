@@ -21,12 +21,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
 
         <div className="md:h-full w-full md:w-3/5 mx-auto py-5 px-10 md:ml-[25%] z-10 mb-[95px] md:mb-0">
-          {connected ? (
+          {/* {connected ? (
            
             children
           ) : (
             <IsNotConnected />
-          )}
+          )} */}
+          {children}
         </div>
       </div>
     </div>

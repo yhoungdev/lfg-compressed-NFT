@@ -77,12 +77,6 @@ importers:
       '@types/passport':
         specifier: ^1.0.16
         version: 1.0.16
-      '@types/passport-discord':
-        specifier: ^0.1.13
-        version: 0.1.13
-      '@types/passport-twitter':
-        specifier: ^1.0.40
-        version: 1.0.40
       '@types/react-dropzone':
         specifier: ^5.1.0
         version: 5.1.0(react@18.3.1)
@@ -3354,18 +3348,6 @@ packages:
 
   '@types/node@20.14.12':
     resolution: {integrity: sha512-r7wNXakLeSsGT0H1AU863vS2wa5wBOK4bWMjZz2wj+8nBx+m5PeIn0k8AloSLpRuiwdRQZwarZqHE4FNArPuJQ==}
-
-  '@types/oauth@0.9.5':
-    resolution: {integrity: sha512-+oQ3C2Zx6ambINOcdIARF5Z3Tu3x//HipE889/fqo3sgpQZbe9c6ExdQFtN6qlhpR7p83lTZfPJt0tCAW29dog==}
-
-  '@types/passport-discord@0.1.13':
-    resolution: {integrity: sha512-A9fGTf69C19xQr4BQUHvK+/DpGuSLF/v/MEMdw4Z46sQd0dqeP+4ysBZqF5rXxaCWVcJKBxXUpV8MpW5jwWVIQ==}
-
-  '@types/passport-oauth2@1.4.17':
-    resolution: {integrity: sha512-ODiAHvso6JcWJ6ZkHHroVp05EHGhqQN533PtFNBkg8Fy5mERDqsr030AX81M0D69ZcaMvhF92SRckEk2B0HYYg==}
-
-  '@types/passport-twitter@1.0.40':
-    resolution: {integrity: sha512-5Yxm+P/x6XEYvANANmjkVnRpMlRpORODZYYplBKH+BFTHQ8kGt3FgMm6eMgIzrGA4WvZo6TKH4IvYug+31mX4w==}
 
   '@types/passport@1.0.16':
     resolution: {integrity: sha512-FD0qD5hbPWQzaM0wHUnJ/T0BBCJBxCeemtnCwc/ThhTg3x9jfrAcRUmj5Dopza+MfFS9acTe3wk7rcVnRIp/0A==}
@@ -13037,27 +13019,6 @@ snapshots:
   '@types/node@20.14.12':
     dependencies:
       undici-types: 5.26.5
-
-  '@types/oauth@0.9.5':
-    dependencies:
-      '@types/node': 20.14.12
-
-  '@types/passport-discord@0.1.13':
-    dependencies:
-      '@types/express': 4.17.21
-      '@types/passport': 1.0.16
-      '@types/passport-oauth2': 1.4.17
-
-  '@types/passport-oauth2@1.4.17':
-    dependencies:
-      '@types/express': 4.17.21
-      '@types/oauth': 0.9.5
-      '@types/passport': 1.0.16
-
-  '@types/passport-twitter@1.0.40':
-    dependencies:
-      '@types/express': 4.17.21
-      '@types/passport': 1.0.16
 
   '@types/passport@1.0.16':
     dependencies:
