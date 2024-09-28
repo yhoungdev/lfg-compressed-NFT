@@ -1,13 +1,16 @@
-import { MintNFT } from "../components/util/mintNft";
+import MintCNFTButton from "../components/misc/MintCNFTButton";
 
 const IndexDashboard = () => {
     return <>
         <div>
-            <h2>Dashboard</h2>
+            <h2 className="my-5 text-center">LFG MINT</h2>
         </div>
 
         <div>
-            <MintNFT/>
+        <center>
+        <MintCNFTButton/>
+        </center>
+            
         </div>
     </>
 }

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import ReactDOM from "react-dom";
-// import { RiGasStationFill } from "react-icons/ri";
 import { ConnectWalletButton } from "./ui/button/connectButton";
 import { Button } from "./Profile";
 import { useWallet } from "@solana/wallet-adapter-react";
