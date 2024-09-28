@@ -28,4 +28,5 @@ dist-ssr
 *.env
 .vercel
 .env
-.next
+.nextkeypair.json
+keypair.json
