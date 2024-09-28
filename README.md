@@ -9,6 +9,17 @@
 ![Screenshot from 2024-09-28 21-28-30](https://github.com/user-attachments/assets/e669b733-d8aa-45f3-bdab-eca3026ebd70)
 
 
+
+
+** Minted NFT successfully ✅✅ 📷📷
+
+![Screenshot from 2024-09-28 23-01-51](https://github.com/user-attachments/assets/42ab1578-9eec-4386-852f-cbafacd1b54f)
+
+![Screenshot from 2024-09-28 23-19-40](https://github.com/user-attachments/assets/bf764664-90b6-4ea0-9714-02790a4eb0ce)
+
+
+
+
 **** To Know *** 
 
  Became low on Funds, so i switched to Devnet ( Sad ) 😄
