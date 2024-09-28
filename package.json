@@ -39,6 +39,7 @@
     "@types/passport-twitter": "^1.0.40",
     "@vercel/node": "^3.2.7",
     "axios": "^1.7.2",
+    "bs58": "^6.0.0",
     "cors": "^2.8.5",
     "js-cookie": "^3.0.5",
     "node-stdlib-browser": "^1.2.0",
