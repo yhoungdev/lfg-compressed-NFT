@@ -20,9 +20,16 @@
 
 
 
-**** To Know *** 
+**** MOVE TO MAINNET *** 
 
- Became low on Funds, so i switched to Devnet ( Sad ) 😄
+### VIEW LIVE 
+
+https://solana.fm/address/3KxATdmr1wbjscqw8yAct2p1EqVLhUCnc2yGk8JH1DR4/transactions?cluster=mainnet-alpha
+
+![Screenshot from 2024-09-30 16-54-20](https://github.com/user-attachments/assets/6fa6aea8-3d7d-4891-bf18-65c09934d828)
+![Screenshot from 2024-09-30 17-18-30](https://github.com/user-attachments/assets/ce7c15b4-afcc-470d-a4dc-4dcf58a68e8e)
+
+
  Having some issues minting the NFT so some of [@Dakshie](https://github.com/Dksie09 ) code and process helped. Thanks ( 🌹🌹 )
 
 #Libraries used 
